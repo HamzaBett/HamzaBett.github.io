@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hamza Bettahar — DevOps &amp; Cloud Engineer</title>
+  <meta name="description" content="Hamza Bettahar, DevOps and cloud engineer in Oran, Algeria. AWS, Kubernetes, Terraform and CI/CD, with a background in electronics, embedded systems and machine learning.">
+  <meta name="author" content="Hamza Bettahar">
+  <meta name="theme-color" content="#0a0e14">
+  <meta name="color-scheme" content="dark light">
+
+  <!-- Social previews (LinkedIn, X, Slack…).
+       Once the site is online, replace "assets/og-image.png" with the full address,
+       e.g. https://your-domain/assets/og-image.png, and add:
+       <link rel="canonical" href="https://your-domain/">  -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Hamza Bettahar">
+  <meta property="og:title" content="Hamza Bettahar — DevOps &amp; Cloud Engineer">
+  <meta property="og:description" content="AWS · Kubernetes · Terraform · CI/CD. Electronics and embedded systems engineer turned DevOps engineer, based in Oran, Algeria.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hamza Bettahar — DevOps &amp; Cloud Engineer">
+  <meta property="profile:first_name" content="Hamza">
+  <meta property="profile:last_name" content="Bettahar">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    /* Pick the theme before first paint so the page never flashes. */
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <script src="js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hamza Bettahar",
+    "jobTitle": "DevOps Engineer",
+    "worksFor": { "@type": "Organization", "name": "Slalom" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "École Nationale Polytechnique d'Oran (ENPO)" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Oran", "addressCountry": "DZ" },
+    "email": "mailto:bett.hamza.enst@gmail.com",
+    "knowsLanguage": ["ar", "fr", "en", "de", "zh"],
+    "knowsAbout": ["DevOps", "Amazon Web Services", "Kubernetes", "Terraform", "CI/CD", "Docker", "Jenkins", "Helm", "ELK Stack", "Embedded systems", "Machine learning"],
+    "sameAs": ["https://www.linkedin.com/in/bettahar-hamza-b626831b4/", "https://github.com/HamzaBett"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Icon sprite -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6M12 19h8"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><path d="M18 12h2M4 12h2M12 4v2M12 18v2"/><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 10h4v4h-4z"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12h3l2-6 4 12 4-12 2 6h5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+    <symbol id="i-tasks" viewBox="0 0 24 24"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+    <symbol id="i-kanban" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 7v7M12 7v4M16 7v9"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="bg-decor" aria-hidden="true"></div>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Hamza Bettahar, back to top">
+        <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="#i-terminal"/></svg></span>
+        <span class="brand-name">hamza<span class="brand-dot">.</span>bettahar</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to light theme">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm header-cta" href="#contact">Get in touch</a>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="status-pill"><span class="pulse" aria-hidden="true"></span>Open to work · remote, hybrid or on-site in Oran</p>
+          <p class="hero-role mono">DevOps &amp; Cloud Engineer <span class="at">@</span> Slalom</p>
+          <h1 class="hero-title" id="hero-title">Hamza <span class="grad">Bettahar</span></h1>
+          <p class="hero-lead">I build cloud infrastructure as code, automate delivery with CI/CD and keep production observable, on <strong>AWS</strong>, <strong>Kubernetes</strong> and <strong>Terraform</strong>.</p>
+          <p class="hero-sub">Electronics &amp; embedded systems engineer turned DevOps engineer: from circuit boards to cloud clusters.</p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#projects">View projects <svg class="icon icon-shift" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+
+          <ul class="social-row" aria-label="Profiles">
+            <li><a class="icon-btn" href="https://github.com/HamzaBett" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a class="icon-btn" href="https://www.linkedin.com/in/bettahar-hamza-b626831b4/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a class="icon-btn" href="mailto:bett.hamza.enst@gmail.com" aria-label="Email bett.hamza.enst@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+            <li class="social-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Oran, Algeria</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="terminal" role="img" aria-label="Animated terminal: Terraform creates an EKS cluster, kubectl lists two Ready nodes, Helm deploys the app and a health check answers ok.">
+            <div class="terminal-bar" aria-hidden="true">
+              <span class="tdot tdot-r"></span><span class="tdot tdot-y"></span><span class="tdot tdot-g"></span>
+              <span class="terminal-title">hamza@cloud: ~/infra</span>
+            </div>
+            <div class="terminal-body" id="terminal-body" aria-hidden="true">
+              <div class="ln"><span class="prompt"><span class="t-path">~/infra</span> <span class="t-user">$</span> </span><span class="cmd">terraform apply -auto-approve</span></div>
+              <div class="ln t-dim">module.vpc: Creation complete after 41s</div>
+              <div class="ln t-dim">module.eks: Creation complete after 9m12s</div>
+              <div class="ln t-ok">Apply complete! Resources: 34 added, 0 changed, 0 destroyed.</div>
+              <div class="ln"><span class="prompt"><span class="t-path">~/infra</span> <span class="t-user">$</span> </span><span class="cmd">kubectl get nodes</span></div>
+              <div class="ln t-head">NAME                         STATUS   AGE</div>
+              <div class="ln">ip-10-0-1-87.ec2.internal    <span class="t-ok">Ready</span>    3m</div>
+              <div class="ln">ip-10-0-2-14.ec2.internal    <span class="t-ok">Ready</span>    3m</div>
+              <div class="ln"><span class="prompt"><span class="t-path">~/infra</span> <span class="t-user">$</span> </span><span class="cmd">helm upgrade --install shop ./chart</span></div>
+              <div class="ln">Release "shop" has been upgraded. Happy Helming!</div>
+              <div class="ln">STATUS: <span class="t-ok">deployed</span></div>
+              <div class="ln"><span class="prompt"><span class="t-path">~/infra</span> <span class="t-user">$</span> </span><span class="cmd">curl -s shop.example.com/healthz</span></div>
+              <div class="ln t-str">{"status":"ok"}</div>
+              <div class="ln ln-final"><span class="prompt"><span class="t-path">~/infra</span> <span class="t-user">$</span> </span><span class="cursor"></span></div>
+            </div>
+          </div>
+          <div class="float-chip chip-a" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>CI · all checks passed</div>
+          <div class="float-chip chip-b" aria-hidden="true"><span class="mono">terraform plan</span>No changes.</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="top-skills">
+          <p class="top-skills-label mono">Top skills</p>
+          <ul>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>Terraform</li>
+            <li>Jenkins</li>
+            <li>Amazon Web Services</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ About ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="num">01</span>About</p>
+          <h2 class="section-title" id="about-title">From circuit boards to cloud clusters</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-main">
+            <div class="prose reveal">
+              <p>I'm an <strong>electronics and embedded systems engineer</strong> from the École Nationale Polytechnique d'Oran who moved into <strong>DevOps and cloud engineering</strong>. Since November 2022 I've worked remotely as a DevOps Engineer at <strong>Slalom</strong>, delivering scalable cloud infrastructure, automation and reliable delivery pipelines for enterprise clients.</p>
+              <p>My work covers the whole stack: PCB layouts, VHDL and microcontrollers, machine learning and full-stack web apps, and today Terraform, Kubernetes and CI/CD on AWS. The common thread is infrastructure that is versioned, automated and observable.</p>
+            </div>
+
+            <ol class="journey">
+              <li class="reveal">
+                <span class="journey-icon"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg></span>
+                <p class="journey-when mono">2017 – 2021</p>
+                <h3>Electronics &amp; embedded systems</h3>
+                <p>Engineering degree at ENPO: digital logic and VHDL, microprocessor systems, control systems, PCB design and robotics.</p>
+              </li>
+              <li class="reveal">
+                <span class="journey-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+                <p class="journey-when mono">2021 – 2023</p>
+                <h3>Machine learning &amp; AI</h3>
+                <p>Coursera's Machine Learning Specialization and Zero To Mastery's TensorFlow and PyTorch programs, applied to computer vision and network-security models.</p>
+              </li>
+              <li class="reveal">
+                <span class="journey-icon"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg></span>
+                <p class="journey-when mono">2022 – today</p>
+                <h3>DevOps &amp; cloud</h3>
+                <p>DevOps Engineer at Slalom: infrastructure as code, CI/CD pipelines, Kubernetes and observability for enterprise clients.</p>
+              </li>
+            </ol>
+          </div>
+
+          <aside class="facts-card card reveal" aria-label="Quick facts">
+            <div class="profile-head">
+              <!-- To use a photo instead of initials, replace this span with:
+                   <img class="avatar" src="assets/profile.jpg" alt="Hamza Bettahar" width="64" height="64"> -->
+              <span class="avatar" aria-hidden="true">HB</span>
+              <div>
+                <p class="profile-name">Hamza Bettahar</p>
+                <p class="profile-role">DevOps &amp; Cloud Engineer</p>
+              </div>
+            </div>
+            <dl class="facts">
+              <div>
+                <dt><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Based in</dt>
+                <dd>Oran, Algeria</dd>
+              </div>
+              <div>
+                <dt><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg>Current role</dt>
+                <dd>DevOps Engineer · Slalom (remote)</dd>
+              </div>
+              <div>
+                <dt><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg>Education</dt>
+                <dd>Engineer's degree (Master's level), ENPO</dd>
+              </div>
+              <div>
+                <dt><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>Languages</dt>
+                <dd>Arabic · French · English · German · Chinese</dd>
+              </div>
+              <div>
+                <dt><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Open to</dt>
+                <dd>Remote · Hybrid · On-site</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+
+        <ul class="stats">
+          <li class="stat reveal">
+            <p class="stat-value"><span data-years-since="2022-11">4+</span></p>
+            <p class="stat-label">years as a DevOps engineer at Slalom</p>
+          </li>
+          <li class="stat reveal">
+            <p class="stat-value">17</p>
+            <p class="stat-label">projects across cloud, AI, embedded and web</p>
+          </li>
+          <li class="stat reveal">
+            <p class="stat-value">98%</p>
+            <p class="stat-label">accuracy of my CNN-LSTM cyberattack detector</p>
+          </li>
+          <li class="stat reveal">
+            <p class="stat-value">5</p>
+            <p class="stat-label">languages spoken</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Experience ============ -->
+    <section class="section section-alt" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="num">02</span>Experience</p>
+          <h2 class="section-title" id="experience-title">Where I've worked</h2>
+          <p class="section-intro">Remote DevOps engineering for enterprise clients, on top of a hands-on start in industrial instrumentation.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <div class="timeline-meta">
+              <p class="when">Nov 2022 – Present</p>
+              <p><span data-since="2022-11">4 yrs 1 mo</span> · Remote</p>
+            </div>
+            <article class="card job">
+              <header class="job-head">
+                <div>
+                  <h3 class="job-title">DevOps Engineer</h3>
+                  <p class="job-company">Slalom</p>
+                </div>
+                <span class="badge"><span class="badge-dot" aria-hidden="true"></span>Current</span>
+              </header>
+              <p class="job-summary">Delivering scalable cloud infrastructure, automation and reliable delivery pipelines for Slalom's enterprise clients.</p>
+              <!-- EDIT ME: the LinkedIn text for this role still contains template placeholders
+                   ([AWS/Azure], [60%], [40%], [EKS/AKS], [Datadog/Prometheus & Grafana], [50%], [25%]).
+                   They are left out below. Add your real numbers and tools once you have them. -->
+              <ul class="highlights">
+                <li><strong>Cloud &amp; IaC</strong>: architected multi-account cloud environments with Terraform, cutting infrastructure provisioning time from days to under 30 minutes.</li>
+                <li><strong>CI/CD automation</strong>: replaced manual deployments with automated pipelines, increasing release frequency and reducing deployment failures.</li>
+                <li><strong>Kubernetes &amp; reliability</strong>: built and operated production Kubernetes clusters with GitOps (Argo CD), sustaining 99.95% uptime under peak load.</li>
+                <li><strong>Observability &amp; FinOps</strong>: implemented centralized monitoring to cut incident resolution time (MTTR), and rightsized cloud resources to reduce monthly spend.</li>
+                <li><strong>Remote leadership</strong>: led technical workstreams across distributed teams and mentored client engineers in self-service DevOps practices.</li>
+              </ul>
+              <ul class="tags" aria-label="Technologies">
+                <li>AWS</li><li>Google Cloud</li><li>Terraform</li><li>Kubernetes</li><li>Argo CD</li><li>Jenkins</li><li>Docker</li><li>CI/CD</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-meta">
+              <p class="when">Dec 2020 – Jan 2021</p>
+              <p>2 mos · Arzew, Oran</p>
+            </div>
+            <article class="card job">
+              <header class="job-head">
+                <div>
+                  <h3 class="job-title">Instrumentation Intern</h3>
+                  <p class="job-company">Sonatrach</p>
+                </div>
+                <span class="badge badge-muted">Internship</span>
+              </header>
+              <p class="job-summary">Internship in the instrumentation department of Sonatrach, Algeria's national oil and gas company, in the Arzew district of Oran.</p>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Projects ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="num">03</span>Projects</p>
+          <h2 class="section-title" id="projects-title">Things I've built</h2>
+          <p class="section-intro">Seventeen projects across cloud infrastructure, AI, embedded hardware and the web. The DevOps work below is on GitHub.</p>
+        </div>
+
+        <ul class="featured-grid">
+          <li class="reveal">
+            <article class="card project-featured spotlight">
+              <div class="pf-top">
+                <p class="pf-kicker mono"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg>Infrastructure as code</p>
+                <a class="pf-link" href="https://github.com/HamzaBett/Kubernetes_Cluster_Deployment_with_Terraform" target="_blank" rel="noopener" aria-label="AWS EKS Cluster with Terraform and Helm on GitHub (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Code<svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </div>
+              <h3 class="pf-title">AWS EKS Cluster with Terraform &amp; Helm</h3>
+              <p class="pf-desc">Terraform modules for a VPC with public and private subnets across availability zones, an EKS cluster and managed node groups. Separate dev, staging and prod configurations, remote state in S3 with DynamoDB locking, and a multi-service app deployed with Kubernetes manifests and a Helm chart.</p>
+              <ol class="flow" aria-label="Flow: Terraform, VPC, EKS, node groups, Helm chart">
+                <li style="--i:0"><span>Terraform</span></li>
+                <li style="--i:1"><span>VPC</span></li>
+                <li style="--i:2"><span>EKS</span></li>
+                <li style="--i:3"><span>Node groups</span></li>
+                <li style="--i:4"><span>Helm chart</span></li>
+              </ol>
+              <ul class="tags" aria-label="Technologies">
+                <li>Terraform</li><li>AWS EKS</li><li>VPC</li><li>IAM</li><li>S3 + DynamoDB</li><li>Kubernetes</li><li>Helm</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="reveal">
+            <article class="card project-featured spotlight">
+              <div class="pf-top">
+                <p class="pf-kicker mono"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg>CI/CD</p>
+                <a class="pf-link" href="https://github.com/HamzaBett/flask-app" target="_blank" rel="noopener" aria-label="CI/CD Pipeline for a Flask App on GitHub (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Code<svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </div>
+              <h3 class="pf-title">CI/CD Pipeline for a Flask App</h3>
+              <p class="pf-desc">A Jenkins pipeline that clones the repo, runs the PyTest suite, builds a Docker image, pushes it to a private registry and deploys it to an AWS EC2 staging server over SSH, with health-check endpoints and a Bash deployment script.</p>
+              <ol class="flow" aria-label="Flow: git push, PyTest, Docker build, registry, EC2 staging">
+                <li style="--i:0"><span>git push</span></li>
+                <li style="--i:1"><span>PyTest</span></li>
+                <li style="--i:2"><span>docker build</span></li>
+                <li style="--i:3"><span>Registry</span></li>
+                <li style="--i:4"><span>EC2 staging</span></li>
+              </ol>
+              <ul class="tags" aria-label="Technologies">
+                <li>Jenkins</li><li>Docker</li><li>PyTest</li><li>AWS EC2</li><li>Bash</li><li>Git</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="reveal">
+            <article class="card project-featured spotlight">
+              <div class="pf-top">
+                <p class="pf-kicker mono"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg>Observability</p>
+                <a class="pf-link" href="https://github.com/HamzaBett/Centralized-Logging-Monitoring-with-ELK-Stack" target="_blank" rel="noopener" aria-label="Centralized Logging and Monitoring with the ELK Stack on GitHub (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Code<svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </div>
+              <h3 class="pf-title">Centralized Logging &amp; Monitoring with the ELK Stack</h3>
+              <p class="pf-desc">Elasticsearch, Logstash, Kibana and Filebeat in Docker Compose, collecting logs from Node.js and Python apps. Filebeat discovers container logs automatically; Logstash parses JSON and Grok patterns and adds GeoIP data. TLS between components, retention policies, and Kibana dashboards for errors, performance and system health.</p>
+              <ol class="flow" aria-label="Flow: containers, Filebeat, Logstash, Elasticsearch, Kibana">
+                <li style="--i:0"><span>Containers</span></li>
+                <li style="--i:1"><span>Filebeat</span></li>
+                <li style="--i:2"><span>Logstash</span></li>
+                <li style="--i:3"><span>Elasticsearch</span></li>
+                <li style="--i:4"><span>Kibana</span></li>
+              </ol>
+              <ul class="tags" aria-label="Technologies">
+                <li>Elasticsearch</li><li>Logstash</li><li>Kibana</li><li>Filebeat</li><li>Docker Compose</li><li>Bash</li>
+              </ul>
+            </article>
+          </li>
+        </ul>
+
+        <div class="projects-subhead reveal">
+          <h3>More projects</h3>
+          <div class="filters" role="group" aria-label="Filter projects by area">
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All <span class="count">14</span></button>
+            <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML <span class="count">3</span></button>
+            <button class="filter-btn" type="button" data-filter="embedded" aria-pressed="false">Embedded &amp; IoT <span class="count">5</span></button>
+            <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web &amp; data <span class="count">6</span></button>
+            <button class="filter-btn" type="button" data-filter="blockchain" aria-pressed="false">Blockchain <span class="count">2</span></button>
+          </div>
+        </div>
+        <p class="sr-only" id="filter-status" aria-live="polite"></p>
+
+        <ul class="project-grid">
+          <li data-cats="ai" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+                <span class="pc-metric mono">98% accuracy</span>
+              </div>
+              <p class="pc-cat mono">AI · Security · Ericsson</p>
+              <h4 class="pc-title">Cyberattack Detection in Mobile Cloud Computing</h4>
+              <p class="pc-desc">A hybrid CNN-LSTM model that detects malware, intrusion attempts and DDoS attacks in mobile cloud network traffic. Feature selection with scikit-learn; training and evaluation with TensorFlow and Keras on Google Colab and Google Cloud.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>TensorFlow</li><li>Keras</li><li>scikit-learn</li><li>Python</li><li>Google Cloud</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="ai embedded" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg></span>
+                <span class="pc-note mono">ENPO</span>
+              </div>
+              <p class="pc-cat mono">AI · IoT</p>
+              <h4 class="pc-title">Smart Doorbell Powered by AI</h4>
+              <p class="pc-desc">An IoT doorbell with anti-spoofing face recognition that resists photo attacks. A mobile app handles notifications, live video, two-way talk and remote door control, and data is encrypted in transit and at rest.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>Python</li><li>Deep learning</li><li>Computer vision</li><li>IoT</li><li>PCB design</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="ai embedded" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-bot"/></svg></span>
+              </div>
+              <p class="pc-cat mono">Robotics · Vision</p>
+              <h4 class="pc-title">Computer Vision Line Follower Robot</h4>
+              <p class="pc-desc">An autonomous robot that follows a line from a Raspberry Pi camera feed. OpenCV image processing finds the line's position and orientation in real time, and PWM motor control turns that into steering.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>Raspberry Pi</li><li>OpenCV</li><li>Python</li><li>Image processing</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="embedded" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg></span>
+              </div>
+              <p class="pc-cat mono">Hardware</p>
+              <h4 class="pc-title">ESP32 PCB Design with Altium Designer</h4>
+              <p class="pc-desc">A custom multilayer ESP32 board for IoT applications, with voltage regulation, decoupling and sensor headers. Routed for signal integrity, power distribution and thermal management, and ready for fabrication.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>Altium Designer</li><li>PCB design</li><li>ESP32</li><li>Circuit design</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="embedded" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg></span>
+              </div>
+              <p class="pc-cat mono">FPGA</p>
+              <h4 class="pc-title">VHDL SPI Master Controller</h4>
+              <p class="pc-desc">A synthesizable SPI master in VHDL for a generic FPGA, verified with a full testbench across configurations for timing and data integrity. TCL scripts automate the simulations and log analysis.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>VHDL</li><li>FPGA</li><li>TCL</li><li>Testbench</li><li>Simulation</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="embedded" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-wave"/></svg></span>
+              </div>
+              <p class="pc-cat mono">Control systems</p>
+              <h4 class="pc-title">Motor Control System Simulation</h4>
+              <p class="pc-desc">A Simulink model of a DC motor control system with a PID controller tuned for low overshoot and short settling time, built with a Model-Based Design workflow that carries over to HDL generation for FPGAs.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>MATLAB</li><li>Simulink</li><li>PID control</li><li>Model-Based Design</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="web" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg></span>
+              </div>
+              <p class="pc-cat mono">Full-stack</p>
+              <h4 class="pc-title">Full-Stack E-commerce Platform</h4>
+              <p class="pc-desc">User authentication, product catalog, shopping cart and order management. A Node.js and Express REST API on PostgreSQL, a React frontend with Redux Toolkit, and Stripe for payments.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>React</li><li>Redux Toolkit</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Stripe</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="web" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-tasks"/></svg></span>
+              </div>
+              <p class="pc-cat mono">Full-stack</p>
+              <h4 class="pc-title">Full-Stack Task Management System</h4>
+              <p class="pc-desc">Create, track and manage projects and tasks. A secure Express REST API with JWT authentication and PostgreSQL, a React and Redux single-page app, and Docker containers for both services.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>React</li><li>Redux</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Docker</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="web" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-kanban"/></svg></span>
+              </div>
+              <p class="pc-cat mono">Real-time app</p>
+              <h4 class="pc-title">Collaborative Project Management Tool</h4>
+              <p class="pc-desc">Trello-style boards, lists and cards with real-time collaboration over Socket.IO, a drag-and-drop interface, and MongoDB storage with Mongoose schemas and validation.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>Next.js</li><li>TypeScript</li><li>Socket.IO</li><li>MongoDB</li><li>Mongoose</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="web" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span>
+              </div>
+              <p class="pc-cat mono">API</p>
+              <h4 class="pc-title">Bookstore RESTful API</h4>
+              <p class="pc-desc">A Django REST Framework API for a bookstore inventory, with full CRUD on books, authors and genres plus pagination, filtering and search for large datasets.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>Python</li><li>Django REST Framework</li><li>SQLite</li><li>PostgreSQL</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="web" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span>
+              </div>
+              <p class="pc-cat mono">Data viz</p>
+              <h4 class="pc-title">Social Media Analytics Dashboard</h4>
+              <p class="pc-desc">A single-page app that pulls user data from third-party APIs such as GitHub and Twitter, with reusable Chart.js components for follower growth and engagement, and client-side routing.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>React</li><li>TypeScript</li><li>Chart.js</li><li>React Router</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="web" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span>
+              </div>
+              <p class="pc-cat mono">Data</p>
+              <h4 class="pc-title">Web Scraper &amp; Data Analyzer</h4>
+              <p class="pc-desc">Scrapy and Beautiful Soup scrapers collect job postings from several websites. The data is cleaned and stored in MongoDB, then analysed with Pandas to find the most in-demand programming languages.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>Python</li><li>Scrapy</li><li>Beautiful Soup</li><li>Pandas</li><li>MongoDB</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="blockchain" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-swap"/></svg></span>
+              </div>
+              <p class="pc-cat mono">DeFi</p>
+              <h4 class="pc-title">Decentralized Exchange (DEX)</h4>
+              <p class="pc-desc">A constant-product automated market maker (x·y = k) in Solidity with ERC-20 token swaps, liquidity pools, LP tokens and fee collection, plus a React and Ethers.js frontend for wallet connection and swaps.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>Solidity</li><li>ERC-20</li><li>React</li><li>Ethers.js</li></ul>
+            </article>
+          </li>
+
+          <li data-cats="blockchain" class="reveal">
+            <article class="card project-card spotlight">
+              <div class="pc-head">
+                <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-coins"/></svg></span>
+              </div>
+              <p class="pc-cat mono">Smart contracts</p>
+              <h4 class="pc-title">FundMe: Decentralized Crowdfunding</h4>
+              <p class="pc-desc">Two Solidity smart contracts for Ethereum crowdfunding, with flexible funding goals, deadline tracking and secure fund withdrawal.</p>
+              <ul class="tags tags-sm" aria-label="Technologies"><li>Solidity</li><li>Ethereum</li><li>Smart contracts</li></ul>
+            </article>
+          </li>
+        </ul>
+
+        <div class="projects-more reveal">
+          <a class="btn btn-ghost" href="https://github.com/HamzaBett" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>More on GitHub<svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Skills ============ -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="num">04</span>Skills</p>
+          <h2 class="section-title" id="skills-title">Skills &amp; tools</h2>
+          <p class="section-intro">Cloud and delivery first, backed by the software, AI and hardware experience that got me here.</p>
+        </div>
+
+        <ul class="skills-grid">
+          <li class="card skill-group reveal">
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg></span>Cloud &amp; infrastructure</h3>
+            <ul class="chips">
+              <li class="core">AWS (EC2 · EKS · VPC · S3 · IAM)</li><li>Google Cloud</li><li class="core">Terraform</li><li class="core">Kubernetes</li><li>Helm</li><li class="core">Docker</li><li>Docker Compose</li><li>Infrastructure as code</li>
+            </ul>
+          </li>
+          <li class="card skill-group reveal">
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></span>Delivery &amp; operations</h3>
+            <ul class="chips">
+              <li class="core">Jenkins</li><li>CI/CD</li><li>GitOps · Argo CD</li><li>ELK Stack</li><li>Linux</li><li>Bash</li><li>PowerShell</li><li>Git &amp; GitHub</li>
+            </ul>
+          </li>
+          <li class="card skill-group reveal">
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>Software &amp; web</h3>
+            <ul class="chips">
+              <li>Python</li><li>JavaScript</li><li>TypeScript</li><li>C++</li><li>Solidity</li><li>React</li><li>Next.js</li><li>Node.js</li><li>Express</li><li>Django REST</li><li>Flask</li><li>PostgreSQL</li><li>MongoDB</li>
+            </ul>
+          </li>
+          <li class="card skill-group reveal">
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>AI &amp; data</h3>
+            <ul class="chips">
+              <li>TensorFlow</li><li>Keras</li><li>PyTorch</li><li>scikit-learn</li><li>OpenCV</li><li>Pandas</li><li>Deep learning</li><li>Computer vision</li>
+            </ul>
+          </li>
+          <li class="card skill-group reveal">
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg></span>Embedded &amp; hardware</h3>
+            <ul class="chips">
+              <li>ARM Cortex-M</li><li>RTOS</li><li>FPGA</li><li>VHDL</li><li>ESP32</li><li>Raspberry Pi</li><li>Altium Designer</li><li>PCB design</li><li>MATLAB / Simulink</li><li>IoT</li>
+            </ul>
+          </li>
+          <li class="card skill-group reveal">
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>Ways of working</h3>
+            <ul class="chips">
+              <li>Problem solving</li><li>Critical thinking</li><li>Teamwork</li><li>Remote collaboration</li><li>Mentoring</li><li>Network security</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Education ============ -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="num">05</span>Education</p>
+          <h2 class="section-title" id="education-title">Education &amp; learning</h2>
+          <p class="section-intro">An engineering degree in embedded electronics, followed by steady self-study in machine learning.</p>
+        </div>
+
+        <div class="edu-grid">
+          <article class="card edu-main reveal">
+            <div class="edu-top">
+              <span class="pc-icon"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></span>
+              <p class="mono edu-years">2017 – 2021</p>
+            </div>
+            <h3 class="edu-school">École Nationale Polytechnique d'Oran (ENPO)</h3>
+            <p class="edu-degree">Engineer's degree (Diplôme d'Ingénieur d'État, Master's level) · Electronics for Embedded Systems</p>
+            <dl class="edu-details">
+              <div>
+                <dt>Relevant coursework</dt>
+                <dd>Digital Logic Design, VHDL, Computer Architecture, Microprocessor Systems, Control Systems, Verification &amp; Validation</dd>
+              </div>
+              <div>
+                <dt>Activities</dt>
+                <dd>Club Muhandis</dd>
+              </div>
+            </dl>
+            <ul class="tags" aria-label="Skills">
+              <li>PCB design</li><li>Robotics</li><li>Antenna design</li><li>Radar</li><li>Networking</li><li>Image analysis</li>
+            </ul>
+          </article>
+
+          <div class="edu-side">
+            <div class="reveal">
+              <h3 class="subhead">Continuous learning</h3>
+              <ul class="course-list">
+                <li class="course">
+                  <span class="course-icon"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg></span>
+                  <div>
+                    <p class="course-title">TensorFlow Developer Certificate</p>
+                    <p class="course-org">Zero To Mastery Academy · Machine learning with TensorFlow</p>
+                  </div>
+                  <span class="course-year mono">2023</span>
+                </li>
+                <li class="course">
+                  <span class="course-icon"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg></span>
+                  <div>
+                    <p class="course-title">Machine Learning Specialization</p>
+                    <p class="course-org">Coursera</p>
+                  </div>
+                  <span class="course-year mono">2021 – 23</span>
+                </li>
+                <li class="course">
+                  <span class="course-icon"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg></span>
+                  <div>
+                    <p class="course-title">PyTorch for Deep Learning</p>
+                    <p class="course-org">Zero To Mastery Academy</p>
+                  </div>
+                  <span class="course-year mono">2022</span>
+                </li>
+                <li class="course">
+                  <span class="course-icon"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg></span>
+                  <div>
+                    <p class="course-title">Machine Learning &amp; Data Science</p>
+                    <p class="course-org">Zero To Mastery Academy</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card lang-card reveal">
+              <h3 class="subhead"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>Languages</h3>
+              <ul class="lang-list">
+                <li><span class="lang-name">Arabic</span><span class="lang-level">Native or bilingual</span><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+                <li><span class="lang-name">French</span><span class="lang-level">Native or bilingual</span><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+                <li><span class="lang-name">English</span><span class="lang-level">Native or bilingual</span><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+                <li><span class="lang-name">German</span><span class="lang-level">Professional working</span><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+                <li><span class="lang-name">Chinese</span><span class="lang-level">Professional working</span><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-card reveal">
+          <p class="eyebrow eyebrow-center"><span class="num">06</span>Contact</p>
+          <h2 class="contact-title" id="contact-title">Let's build something <span class="grad">reliable</span>.</h2>
+          <p class="contact-text">I'm open to DevOps, cloud and platform engineering roles: remote, hybrid, or on-site in Oran, Algeria. Send me an email or a message on LinkedIn.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary btn-lg" href="mailto:bett.hamza.enst@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>bett.hamza.enst@gmail.com</a>
+            <button class="btn btn-ghost btn-lg" type="button" data-copy="bett.hamza.enst@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>Copy address</button>
+          </div>
+          <ul class="contact-links">
+            <li><a href="https://www.linkedin.com/in/bettahar-hamza-b626831b4/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a href="https://github.com/HamzaBett" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Hamza Bettahar · Oran, Algeria</p>
+      <a class="to-top" href="#top">Back to top<svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
