@@ -1067,6 +1067,7 @@ body.nav-open .site-header {
 .chips li.core { border-color: var(--accent-line); background: var(--accent-soft); color: var(--accent); font-weight: 500; }
 
 @media (max-width: 1000px) { .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1000px) and (min-width: 641px) { .skills-grid > li:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 @media (max-width: 640px) { .skills-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- Education ---------- */
