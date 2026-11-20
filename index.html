@@ -9,15 +9,14 @@
   <meta name="theme-color" content="#0a0e14">
   <meta name="color-scheme" content="dark light">
 
-  <!-- Social previews (LinkedIn, X, Slack…).
-       Once the site is online, replace "assets/og-image.png" with the full address,
-       e.g. https://your-domain/assets/og-image.png, and add:
-       <link rel="canonical" href="https://your-domain/">  -->
+  <!-- Social previews (LinkedIn, X, Slack…). og:image must be a full URL. -->
+  <link rel="canonical" href="https://hamzabett.github.io/">
+  <meta property="og:url" content="https://hamzabett.github.io/">
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Hamza Bettahar">
   <meta property="og:title" content="Hamza Bettahar — DevOps &amp; Cloud Engineer">
   <meta property="og:description" content="AWS · Kubernetes · Terraform · CI/CD. Electronics and embedded systems engineer turned DevOps engineer, based in Oran, Algeria.">
-  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image" content="https://hamzabett.github.io/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hamza Bettahar — DevOps &amp; Cloud Engineer">
@@ -58,7 +57,7 @@
     "address": { "@type": "PostalAddress", "addressLocality": "Oran", "addressCountry": "DZ" },
     "email": "mailto:bett.hamza.enst@gmail.com",
     "knowsLanguage": ["ar", "fr", "en", "de", "zh"],
-    "knowsAbout": ["DevOps", "Amazon Web Services", "Kubernetes", "Terraform", "CI/CD", "Docker", "Jenkins", "Helm", "ELK Stack", "Embedded systems", "Machine learning"],
+    "knowsAbout": ["DevOps", "DevSecOps", "Amazon Web Services", "Kubernetes", "Terraform", "Ansible", "CI/CD", "GitLab CI/CD", "Jenkins", "Argo CD", "Docker", "Helm", "HashiCorp Vault", "Prometheus", "Grafana", "OpenTelemetry", "ELK Stack", "Embedded systems", "Machine learning"],
     "sameAs": ["https://www.linkedin.com/in/bettahar-hamza-b626831b4/", "https://github.com/HamzaBett"]
   }
   </script>
@@ -91,6 +90,7 @@
     <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
     <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></symbol>
     <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
     <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
     <symbol id="i-chip" viewBox="0 0 24 24"><path d="M18 12h2M4 12h2M12 4v2M12 18v2"/><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 10h4v4h-4z"/></symbol>
@@ -634,26 +634,44 @@
         <div class="section-head reveal">
           <p class="eyebrow"><span class="num">04</span>Skills</p>
           <h2 class="section-title" id="skills-title">Skills &amp; tools</h2>
-          <p class="section-intro">Cloud and delivery first, backed by the software, AI and hardware experience that got me here.</p>
+          <p class="section-intro">Cloud, delivery and security first, backed by the software, AI and hardware experience that got me here.</p>
         </div>
 
         <ul class="skills-grid">
           <li class="card skill-group reveal">
             <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg></span>Cloud &amp; infrastructure</h3>
             <ul class="chips">
-              <li class="core">AWS (EC2 · EKS · VPC · S3 · IAM)</li><li>Google Cloud</li><li class="core">Terraform</li><li class="core">Kubernetes</li><li>Helm</li><li class="core">Docker</li><li>Docker Compose</li><li>Infrastructure as code</li>
+              <li class="core">AWS (EC2 · EKS · VPC · S3 · IAM)</li><li>AWS Route 53</li><li>Google Cloud</li><li class="core">Terraform</li><li class="core">Kubernetes</li><li>Helm</li><li class="core">Docker</li><li>Docker Compose</li><li>Ansible</li><li>Linux (Ubuntu)</li><li>Infrastructure as code</li>
             </ul>
           </li>
           <li class="card skill-group reveal">
-            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></span>Delivery &amp; operations</h3>
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></span>CI/CD &amp; automation</h3>
             <ul class="chips">
-              <li class="core">Jenkins</li><li>CI/CD</li><li>GitOps · Argo CD</li><li>ELK Stack</li><li>Linux</li><li>Bash</li><li>PowerShell</li><li>Git &amp; GitHub</li>
+              <li class="core">Jenkins</li><li>GitLab CI/CD</li><li>GitOps · Argo CD</li><li>BuildKit</li><li>CI/CD</li><li>Git &amp; GitHub</li><li>Bash</li><li>PowerShell</li>
+            </ul>
+          </li>
+          <li class="card skill-group reveal">
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span>Observability</h3>
+            <ul class="chips">
+              <li>Prometheus</li><li>Grafana</li><li>OpenTelemetry</li><li>ELK Stack</li><li>Elasticsearch</li><li>Logstash</li><li>Kibana</li><li>CloudWatch</li><li>CloudTrail</li>
+            </ul>
+          </li>
+          <li class="card skill-group reveal">
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>DevSecOps</h3>
+            <ul class="chips">
+              <li>SonarQube</li><li>Trivy</li><li>Gitleaks</li><li>OWASP ZAP</li><li>Kyverno (policy as code)</li><li>Falco</li><li>Cosign</li><li>HashiCorp Vault</li><li>OWASP Top 10</li><li>CIS Benchmarks</li><li>STRIDE threat modeling</li>
+            </ul>
+          </li>
+          <li class="card skill-group reveal">
+            <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg></span>Networking &amp; security</h3>
+            <ul class="chips">
+              <li>Nginx</li><li>Keycloak (IAM)</li><li>iptables</li><li>nftables</li><li>Wireshark</li><li>Suricata</li><li>Wazuh</li><li>Burp Suite</li><li>Nmap</li><li>Network security</li><li>Zero Trust</li><li>NIST CSF</li><li>MITRE ATT&amp;CK</li>
             </ul>
           </li>
           <li class="card skill-group reveal">
             <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>Software &amp; web</h3>
             <ul class="chips">
-              <li>Python</li><li>JavaScript</li><li>TypeScript</li><li>C++</li><li>Solidity</li><li>React</li><li>Next.js</li><li>Node.js</li><li>Express</li><li>Django REST</li><li>Flask</li><li>PostgreSQL</li><li>MongoDB</li>
+              <li>Python</li><li>Java</li><li>C#</li><li>JavaScript</li><li>TypeScript</li><li>C++</li><li>Solidity</li><li>React</li><li>Next.js</li><li>Node.js</li><li>Express</li><li>FastAPI</li><li>Django REST</li><li>Flask</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>Vitest</li><li>Playwright</li>
             </ul>
           </li>
           <li class="card skill-group reveal">
@@ -671,7 +689,7 @@
           <li class="card skill-group reveal">
             <h3><span class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>Ways of working</h3>
             <ul class="chips">
-              <li>Problem solving</li><li>Critical thinking</li><li>Teamwork</li><li>Remote collaboration</li><li>Mentoring</li><li>Network security</li>
+              <li>Problem solving</li><li>Critical thinking</li><li>Teamwork</li><li>Remote collaboration</li><li>Mentoring</li>
             </ul>
           </li>
         </ul>
